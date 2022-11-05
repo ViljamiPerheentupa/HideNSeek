@@ -41,7 +41,7 @@ public class Generator : MonoBehaviour
 
                 GameObject GetRandomRoomPrefab()
                 {
-                    if (cat.maxSingleRoomUseCount <= 0) return cat.rooms[UnityEngine.Random.Range(0, cat.rooms.Count)];
+                    if (cat.singleRoomUseLimit <= 0) return cat.rooms[UnityEngine.Random.Range(0, cat.rooms.Count)];
 
                     var ranIndex = UnityEngine.Random.Range(0, cat.rooms.Count - roomBans - distBlockedCount);
                     var current = 0;
@@ -49,9 +49,9 @@ public class Generator : MonoBehaviour
                     {
                         if (current >= cat.rooms.Count)
                         {
-                            throw new InvalidOperationException($"{nameof(cat.maxSingleRoomUseCount)} is too low for category at index {catIndex}");
+                            throw new InvalidOperationException($"{nameof(cat.singleRoomUseLimit)} is too low for category at index {catIndex}");
                         }
-                        if (roomSelectCount[current] >= cat.maxSingleRoomUseCount) {
+                        if (roomSelectCount[current] >= cat.singleRoomUseLimit) {
                             j--;
                         }
                         current++;
@@ -59,7 +59,7 @@ public class Generator : MonoBehaviour
 
 
                     roomSelectCount[current-1]++;
-                    if (roomSelectCount[current-1] >= cat.maxSingleRoomUseCount)
+                    if (roomSelectCount[current-1] >= cat.singleRoomUseLimit)
                     {
                         roomBans++;
                     }
@@ -131,7 +131,7 @@ public class Generator : MonoBehaviour
         public List<GameObject> rooms;
         public int minRoomCount = -1;
         public int maxRoomCount = -1;
-        public int maxSingleRoomUseCount = -1;
+        public int singleRoomUseLimit = -1;
         public int minDist = 0;
     }
 }
