@@ -2,7 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerManager : MonoBehaviour {
+public class PlayerMovement : MonoBehaviour {
+    public string characterPrefix = "Player";
+    public string horizontalJoystickname = "HorizontalJoystick";
+    public string verticalJoystickname = "VerticalJoystick";
     private CharacterController cc;
     public float speed = 2.0f;
     Vector2 rotation = Vector2.zero;
@@ -14,6 +17,7 @@ public class PlayerManager : MonoBehaviour {
 
     void Start() {
         cc = GetComponent<CharacterController>();
+        horizontalJoystickname = characterPrefix + horizontalJoystickname;
     }
 
     void Update() {
