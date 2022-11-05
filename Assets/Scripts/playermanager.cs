@@ -5,20 +5,20 @@ using UnityEngine;
 public class playermanager : MonoBehaviour {
     private CharacterController cc;
     public float speed = 2.0f;
-    public float rotationSpeed = 180f;
-    Vector3 rotation;
+    Vector2 rotation = Vector2.zero;
+    public float rotationSpeed = 3;
 
-    // Start is called before the first frame update
     void Start() {
         cc = GetComponent<CharacterController>();
     }
 
-    // Update is called once per frame
     void Update() {
-        this.rotation = new Vector3(0, Input.GetAxisRaw("Horizontal") * rotationSpeed * Time.deltaTime, 0);
-        Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-
+        Vector3 move = new Vector3(Input.GetAxis("VerticalJoystick"), 0, Input.GetAxis("HorizontalJoystick"));
         cc.Move(move * Time.deltaTime * speed);
 
+        rotation.y += Mathf.Clamp(Input.GetAxis("VerticalJoystick2"), -90, 90);
+        rotation.x += -Input.GetAxis("HorizontalJoystick2");
+        transform.eulerAngles = (Vector2)rotation * rotationSpeed;
     }
+
 }
