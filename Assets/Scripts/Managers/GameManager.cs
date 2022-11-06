@@ -1,13 +1,15 @@
+using Muc.Components.Extended;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class GameManager : Singleton<GameManager>
 {
     [HideInInspector]
     public PowerManager powerM;
 
     public GameObject LeechWinUI;
+    public GameObject ChumpWinUI;
 
     public void Start() {
         powerM = GetComponentInChildren<PowerManager>();
@@ -24,6 +26,12 @@ public class GameManager : MonoBehaviour
         LeechWinUI.SetActive(true);
     }
 
+    public void ChumpWin()
+    {
+        GameEnd();
+        ChumpWinUI.SetActive(true);
+    }
+
     void GameEnd() {
         Time.timeScale = 0;
     }
@@ -35,5 +43,10 @@ public class GameManager : MonoBehaviour
         //ADD Chump win UI outta here
         //ADD Reroll map generation
         //ADD Players respawning
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }

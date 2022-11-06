@@ -3,7 +3,7 @@ public class Character2D : MonoBehaviour
 {
     private CharacterController controller;
     
-    private const float playerSpeed = 2.0f;
+    private const float playerSpeed = 2.5f;
     
     private void Start()
     {

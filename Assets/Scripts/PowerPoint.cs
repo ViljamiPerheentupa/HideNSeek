@@ -4,13 +4,6 @@ using UnityEngine;
 
 public class PowerPoint : MonoBehaviour
 {
-    public float powerPerTick = 5f;
-    public float timePerTick = 5f;
-    private float lastTick;
-
-    
-    bool draining;
-    public bool hiderInRadius;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Hider"))

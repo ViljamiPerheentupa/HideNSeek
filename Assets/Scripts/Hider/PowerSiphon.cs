@@ -18,7 +18,7 @@ public class PowerSiphon : Singleton<PowerSiphon>
         siphonDelay.Reset();
         siphonDelay.paused = true;
         promptUI = GameObject.FindGameObjectWithTag("Prompt");
-        promptFill = GameObject.Find("Prompt").GetComponentInChildren<Image>();
+        promptFill = GameObject.Find("Fill").GetComponent<Image>();
         promptUI.SetActive(false);
     }
     // Update is called once per frame
@@ -35,7 +35,6 @@ public class PowerSiphon : Singleton<PowerSiphon>
             promptFill.fillAmount = (Time.time - siphonDelay.pauseAdjustedRefTime) / siphonDelay.delay;
             if (Input.GetButton("Submit"))
             {
-                Debug.Log("siphoning");
                 siphonDelay.paused = false;
             } else
             {
