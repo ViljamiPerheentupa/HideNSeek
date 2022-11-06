@@ -13,8 +13,8 @@ namespace Muc.Time {
 	public class Interval {
 
 		[SerializeField]
-		internal float refTime;
-		private float pauseAdjustedRefTime => paused ? refTime + Time.time - pauseTime : refTime;
+		public float refTime;
+		public float pauseAdjustedRefTime => paused ? refTime + Time.time - pauseTime : refTime;
 
 		/// <summary>
 		/// Repeating duration after which a new use becomes available.
@@ -38,7 +38,7 @@ namespace Muc.Time {
 			}
 		}
 		[SerializeField]
-		internal float _delay = 1;
+		public float _delay = 1;
 
 		/// <summary>
 		/// Amount of times this Interval has been used.
