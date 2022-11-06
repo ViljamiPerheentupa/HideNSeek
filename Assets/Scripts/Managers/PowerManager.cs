@@ -1,9 +1,10 @@
+using Muc.Components.Extended;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PowerManager : MonoBehaviour
+public class PowerManager : Singleton<PowerManager>
 {
     private GameManager manager;
     private Image powerFill;
