@@ -3,7 +3,7 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     private Transform hider;
-    private const float camFollowHeight = 5f;
+    private const float camFollowHeight = 10f;
     private const float camFollowSpeed = 1f;
     private Vector3 prevPos;
 

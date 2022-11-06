@@ -7,6 +7,8 @@ TagManager:
   - PowerUI
   - LeechWinUI
   - Wall
+  - Hider
+  - Prompt
   layers:
   - Default
   - TransparentFX
