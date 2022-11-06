@@ -157,10 +157,10 @@ MonoBehaviour:
   roomCategories:
   - rooms:
     - {fileID: 3065227006639987505, guid: 776b2effd8e0d3e4c89e35c7470ab3cb, type: 3}
-    minRoomCount: 5
-    maxRoomCount: 5
+    minRoomCount: 2
+    maxRoomCount: 2
     singleRoomUseLimit: -1
-    minDist: 4
+    minDist: 10
   - rooms:
     - {fileID: 7536171919583145756, guid: 28f609f540fe8c44a842ae7e4dc8b972, type: 3}
     - {fileID: 7181015212463736133, guid: 71c65803557a1354fa7fd486befb8aa7, type: 3}

@@ -11,15 +11,28 @@ public class Generator : Singleton<Generator>
 
     public List<RoomCategory> roomCategories;
 
+    [HideInInspector]
+    public bool generated;
+
     // Start is called before the first frame update
     void Start()
     {
         Generate();
     }
-
+    void Degenerate()
+    {
+        this.generated = false;
+        foreach (Transform child in transform)
+        {
+            Destroy(child);
+        }
+    }
     // Update is called once per frame
     void Generate()
     {
+        if (this.generated)
+            Degenerate();
+        this.generated = true;
         var generated = 0;
         var cellCount = gridSize.x * gridSize.y;
         var generatedRooms = new RoomCategory[gridSize.x, gridSize.y];
