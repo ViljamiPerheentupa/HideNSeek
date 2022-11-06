@@ -33,7 +33,7 @@ public class PowerPoint : MonoBehaviour
         if (Input.GetButton("Submit"))
         {
             draining = true;
-        } e
+        }
         if (draining)
         {
             if(Time.time - lastTick >= timePerTick)
