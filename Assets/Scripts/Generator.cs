@@ -176,7 +176,7 @@ namespace Editors
                 }
                 if (ButtonField(new(nameof(t.Degenerate))))
                 {
-                t.Degenerate();
+                    t.Degenerate();
                 }
             }
         }
