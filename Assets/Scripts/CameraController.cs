@@ -1,19 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
     private Transform hider;
-    private float camHeight = 5f;
-    void Start()
+    private const float camFollowHeight = 5f;
+    private const float camFollowSpeed = 1f;
+    private Vector3 prevPos;
+
+    private void Start()
     {
         hider = GameObject.Find("Hider").transform;
     }
-
-    // Update is called once per frame
-    void Update()
+    
+    private void Update()
     {
-        transform.position = hider.transform.position + Vector3.up * camHeight;
+        var hiderPos = hider.position;
+        var hiderSpeed = Vector3.Distance(prevPos, hiderPos);
+        var pos = transform.position;
+        var camTargetPos = hiderPos + hider.forward * hiderSpeed * 1000f + Vector3.up * camFollowHeight;
+        var dist = Vector3.Distance(pos, camTargetPos);
+        var delta = Time.deltaTime * camFollowSpeed * dist;
+
+        transform.position = Vector3.MoveTowards(pos, camTargetPos, delta);
+        prevPos = hiderPos;
     }
 }
