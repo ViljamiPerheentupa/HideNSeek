@@ -52,7 +52,7 @@ public class Generator : Singleton<Generator>
                 {
                     if (cat.singleRoomUseLimit <= 0) return cat.rooms[UnityEngine.Random.Range(0, cat.rooms.Count)];
 
-                    var ranIndex = UnityEngine.Random.Range(0, cat.rooms.Count - roomBans - distBlockedCount);
+                    var ranIndex = UnityEngine.Random.Range(0, cat.rooms.Count - roomBans);
                     var current = 0;
                     for (int j = 0; j <= ranIndex; j++)
                     {

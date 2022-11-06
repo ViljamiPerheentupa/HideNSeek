@@ -12,7 +12,7 @@ public class Character2D : MonoBehaviour
 
     private void Update()
     {
-        var move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")).normalized;
+        var move = new Vector3(Input.GetAxis("P2HorizontalJoystick"), 0, Input.GetAxis("P2VerticalJoystick")).normalized;
         
         controller.Move(move * Time.deltaTime * playerSpeed);
 
