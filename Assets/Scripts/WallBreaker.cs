@@ -14,7 +14,7 @@ public class WallBreaker : MonoBehaviour
     }
     void WreckWall()
     {
-        var objs = Physics.SphereCastAll(transform.position, radius, transform.forward, mask);
+        var objs = Physics.SphereCastAll(transform.position, radius, transform.forward, 1f, mask);
         foreach (RaycastHit hit in objs)
         {
             if (hit.collider.CompareTag(wallTag))
