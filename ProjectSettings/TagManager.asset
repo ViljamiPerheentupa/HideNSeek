@@ -9,6 +9,7 @@ TagManager:
   - Wall
   - Hider
   - Prompt
+  - Catcher
   layers:
   - Default
   - TransparentFX
@@ -19,10 +20,10 @@ TagManager:
   - WallLogic
   - Debris
   - Players
-  - 
-  - 
-  - 
-  - 
+  - HiderSKIP
+  - SeekerSKIP
+  - Catcher
+  - Catchee
   - 
   - 
   - 
