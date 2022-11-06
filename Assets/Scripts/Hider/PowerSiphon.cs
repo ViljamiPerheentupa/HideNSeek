@@ -6,30 +6,19 @@ using UnityEngine;
 
 public class PowerSiphon : Singleton<PowerSiphon>
 {
-    public Timeout siphonDelay;
-    public Timeout siphonCooldown;
+    public Interval siphonDelay;
     public float siphonAmount;
     void Start()
     {
         siphonDelay.Reset();
         siphonDelay.paused = true;
-        siphonCooldown.Reset();
-        siphonCooldown.paused = true;
     }
     // Update is called once per frame
     void Update()
     {
-        if (siphonDelay.Use())
+        while (siphonDelay.UseOne())
         {
-            siphonDelay.Reset();
-            siphonDelay.paused = true;
-            siphonCooldown.Reset();
-            siphonCooldown.paused = false;
-        }
-        if (siphonCooldown.Use())
-        {
-            siphonCooldown.Reset();
-            siphonCooldown.paused = true;
+            PowerManager.instance.ChangePowerAmount(siphonAmount);
         }
     }
 
