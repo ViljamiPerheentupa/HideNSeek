@@ -162,15 +162,6 @@ MonoBehaviour:
     singleRoomUseLimit: -1
     minDist: 4
   - rooms:
-    - {fileID: 5228213175504170173, guid: 2390155f47043554499ab3cf0738768d, type: 3}
-    minRoomCount: 5
-    maxRoomCount: 5
-    singleRoomUseLimit: -1
-    minDist: 4
-  - rooms:
-    - {fileID: 8585646997638095934, guid: a803e05fc227aa045b7ea3476f769bb2, type: 3}
-    - {fileID: 8585646997638095934, guid: 2904c78d75f098a409aa758a5345a5be, type: 3}
-    - {fileID: 8585646997638095934, guid: c38ab45acb6a75747b116775b9d49f74, type: 3}
     - {fileID: 7536171919583145756, guid: 28f609f540fe8c44a842ae7e4dc8b972, type: 3}
     - {fileID: 7181015212463736133, guid: 71c65803557a1354fa7fd486befb8aa7, type: 3}
     - {fileID: 2385507816375712914, guid: 962840ae10a71bd40b898ed5a45a9d59, type: 3}
