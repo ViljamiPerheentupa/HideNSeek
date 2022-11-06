@@ -6,27 +6,58 @@ using UnityEngine;
 
 public class NearbyObjectInteractionManager : Singleton<NearbyObjectInteractionManager>
 {
+
+    public float maxInteractionDistance = 2;
+
     [HideInInspector]
     public List<Interactable> interactables;
+
+    [HideInInspector]
+    public Interactable previous;
+    [HideInInspector]
+    public Interactable previousActivated;
 
     // Update is called once per frame
     void Update()
     {
-        var closest = FindObjectsOfType<Interactable>().FirstOrDefault();
+        var closest = interactables.FirstOrDefault();
         var closestDist = float.PositiveInfinity;
-        foreach (var interactable in interactables)
+        if (closest != null)
         {
-            var dist = Vector3.Distance(interactable.transform.position, closest.transform.position);
-            if (dist < closestDist)
+            foreach (var interactable in interactables)
             {
-                closest = interactable;
-                closestDist = dist;
-            }
+                var dist = Vector3.Distance(interactable.transform.position, closest.transform.position);
+                if (dist < closestDist && dist <= maxInteractionDistance)
+                {
+                    closest = interactable;
+                    closestDist = dist;
+                }
 
+            }
         }
-        if (closest && true)
+        if (closest && Input.GetKeyDown(KeyCode.Space))
         {
-            closest.Activate(null);
-        } 
+            closest.Activate();
+            previousActivated = closest;
+        }
+        else
+        {
+            if (previousActivated && previousActivated.activated)
+            {
+                previousActivated.Deactivate();
+            }
+        }
+        if (previous != closest)
+        {
+            if (closest)
+            {
+                closest.Focus();
+            }
+            if (previous)
+            {
+                previous.Unfocus();
+            }
+        }
+        previous = closest;
     }
 }
