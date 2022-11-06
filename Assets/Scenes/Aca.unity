@@ -214,7 +214,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 230821493}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.03892699, y: -1.9400686, z: 9.9959345}
+  m_LocalPosition: {x: -0.03892699, y: 0, z: 9.9959345}
   m_LocalScale: {x: 2.8031, y: 2.8031, z: 2.8031}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -579,6 +579,8 @@ MonoBehaviour:
   characterPrefix: P1
   horizontalJoystickname: HorizontalJoystick
   verticalJoystickname: VerticalJoystick
+  horizontalJoystick2name: HorizontalJoystick2
+  verticalJoystick2name: VerticalJoystick2
   speed: 4
   rotationSpeed: 2
   head: {fileID: 1511562011}
@@ -674,7 +676,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1233476555}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.01, z: 0}
+  m_LocalPosition: {x: 0, y: 2.61, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -715,10 +717,12 @@ MonoBehaviour:
   characterPrefix: P2
   horizontalJoystickname: HorizontalJoystick
   verticalJoystickname: VerticalJoystick
-  speed: 2
-  rotationSpeed: 3
+  horizontalJoystick2name: HorizontalJoystick2
+  verticalJoystick2name: VerticalJoystick2
+  speed: 4
+  rotationSpeed: 2
   head: {fileID: 1043468431}
-  headRotationSpeed: 3
+  headRotationSpeed: 70
   headAngle: 0
 --- !u!143 &1243150546
 CharacterController:
@@ -746,8 +750,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1243150544}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.49, z: 7.24}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 2.2, z: 7.2651}
+  m_LocalScale: {x: 0.4733046, y: 0.4733046, z: 0.8993734}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1043468431}
