@@ -15,7 +15,7 @@ public class PowerPoint : MonoBehaviour
     {
         if (other.CompareTag("Hider"))
         {
-            hiderInRadius = true;
+            PowerSiphon.instance.OnEnterPowerPoint();
         }
     }
 
@@ -23,23 +23,8 @@ public class PowerPoint : MonoBehaviour
     {
         if (other.CompareTag("Hider"))
         {
-            hiderInRadius = false;
+            PowerSiphon.instance.OnExitPowerPoint();
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetButton("Submit"))
-        {
-            draining = true;
-        }
-        if (draining)
-        {
-            if(Time.time - lastTick >= timePerTick)
-            {
-
-            }
-        }
-    }
 }
