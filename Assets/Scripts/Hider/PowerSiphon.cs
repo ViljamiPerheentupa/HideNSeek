@@ -13,17 +13,25 @@ public class PowerSiphon : Singleton<PowerSiphon>
     public GameObject promptUI;
     public Image promptFill;
     public bool inRadius;
+    GameObject powerUI;
+    
     void Start()
     {
+
         siphonDelay.Reset();
         siphonDelay.paused = true;
         promptUI = GameObject.FindGameObjectWithTag("Prompt");
         promptFill = GameObject.Find("Fill").GetComponent<Image>();
         promptUI.SetActive(false);
+
     }
     // Update is called once per frame
     void Update()
     {
+        if (GameManager.instance.gameOn)
+        {
+            return;
+        }
         while (siphonDelay.UseOne())
         {
             PowerManager.instance.ChangePowerAmount(siphonAmount);

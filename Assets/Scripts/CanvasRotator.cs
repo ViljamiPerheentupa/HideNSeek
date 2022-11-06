@@ -5,7 +5,7 @@ public class CanvasRotator : MonoBehaviour
     private Transform seeker;
     private void Start()
     {
-        seeker = GameObject.Find("Seeker").transform;
+        seeker = GameObject.Find("SeekerNEW").transform;
     }
 
     private void Update()

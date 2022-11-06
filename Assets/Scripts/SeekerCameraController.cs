@@ -20,7 +20,7 @@ public class SeekerCameraController : MonoBehaviour
     
     private void Update()
     {
-        if(gameOn || rigged)
+        if(!GameManager.instance.gameOn || rigged)
             return;
         
         CameraIntro();

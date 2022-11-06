@@ -10,6 +10,9 @@ public class GameManager : Singleton<GameManager>
 
     public GameObject LeechWinUI;
     public GameObject ChumpWinUI;
+    public GameObject powerUI;
+
+    public bool gameOn;
 
     public void Start() {
         powerM = GetComponentInChildren<PowerManager>();
@@ -40,9 +43,9 @@ public class GameManager : Singleton<GameManager>
         Time.timeScale = 1;
         powerM.ResetPowerAmount();
         LeechWinUI.SetActive(false);
-        //ADD Chump win UI outta here
-        //ADD Reroll map generation
-        //ADD Players respawning
+        ChumpWinUI.SetActive(true);
+        powerUI.SetActive(true);
+        gameOn = true;
     }
 
     public void QuitGame()

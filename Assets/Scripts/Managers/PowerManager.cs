@@ -9,17 +9,24 @@ public class PowerManager : Singleton<PowerManager>
     private GameManager manager;
     private Image powerFill;
     [HideInInspector] public float powerAmount;
+    GameObject powerUI;
     public float powerMax = 100f;
     void Start()
     {
         manager = gameObject.GetComponentInParent<GameManager>();
         powerFill = GameObject.FindGameObjectWithTag("PowerUI").GetComponent<Image>();
         ResetPowerAmount();
+        powerUI = GameObject.Find("Power");
+        powerUI.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!GameManager.instance.gameOn)
+        {
+            return;
+        }
         powerFill.fillAmount = powerAmount / powerMax;
         //Debug();
     }

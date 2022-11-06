@@ -20,12 +20,12 @@ public class HiderCameraController : MonoBehaviour
 
     private void Start()
     {
-        hider = GameObject.Find("Hider").transform;
+        hider = GameObject.Find("HiderNEW").transform;
     }
     
     private void Update()
     {
-        if (gameOn)
+        if (!GameManager.instance.gameOn)
             return;
 
         if (!rigged)

@@ -14,6 +14,10 @@ public class Generator : Singleton<Generator>
     [HideInInspector]
     public bool generated;
 
+    private void Awake()
+    {
+        Generate();
+    }
     public void Degenerate()
     {
         this.generated = false;
