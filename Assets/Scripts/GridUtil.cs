@@ -4,13 +4,13 @@ using UnityEngine;
 
 public static class GridUtil 
 {
-    public static Vector2Int LoopIndex(Vector2Int index, Vector2Int gridSize)
+    public static Vector2Int LoopIndex(Vector2Int index)
     {
-        return LoopIndex(index.x, index.y, gridSize);
+        return LoopIndex(index.x, index.y);
     }
-    public static Vector2Int LoopIndex(int x, int y, Vector2Int gridSize)
+    public static Vector2Int LoopIndex(int x, int y)
     {
-        return new Vector2Int(mod(x, gridSize.x), mod(y, gridSize.y));
+        return new Vector2Int(mod(x, Generator.instance.gridSize.x), mod(y, Generator.instance.gridSize.y));
         int mod(int x, int m)
         {
             int r = x % m;

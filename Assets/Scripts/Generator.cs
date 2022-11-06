@@ -1,9 +1,10 @@
+using Muc.Components.Extended;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Generator : MonoBehaviour
+public class Generator : Singleton<Generator>
 {
     public int cellSize = 5;
     public Vector2Int gridSize = new Vector2Int(5, 5);
@@ -105,7 +106,7 @@ public class Generator : MonoBehaviour
                         {
                             for (int j = 0; j <= i; j++)
                             {
-                                var currentOffset = GridUtil.LoopIndex(current2d + offset * i + subOffset * j, gridSize);
+                                var currentOffset = GridUtil.LoopIndex(current2d + offset * i + subOffset * j);
                                 if (generatedRooms[currentOffset.x, currentOffset.y] == null && !distBlocked[currentOffset.x, currentOffset.y])
                                 {
                                     distBlocked[currentOffset.x, currentOffset.y] = true;
