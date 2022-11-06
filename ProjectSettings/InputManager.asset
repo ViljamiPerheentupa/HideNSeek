@@ -533,4 +533,52 @@ InputManager:
     type: 2
     axis: 0
     joyNum: 2
+  - serializedVersion: 3
+    m_Name: P2VerticalJoystick
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 0
+    dead: 0.19
+    sensitivity: 1
+    snap: 0
+    invert: 1
+    type: 2
+    axis: 1
+    joyNum: 2
+  - serializedVersion: 3
+    m_Name: P2HorizontalJoystick2
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 0
+    dead: 0.19
+    sensitivity: 1
+    snap: 0
+    invert: 1
+    type: 2
+    axis: 3
+    joyNum: 2
+  - serializedVersion: 3
+    m_Name: P2VerticalJoystick2
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 0
+    dead: 0.19
+    sensitivity: 1
+    snap: 0
+    invert: 1
+    type: 2
+    axis: 4
+    joyNum: 2
   m_UsePhysicalKeys: 0
