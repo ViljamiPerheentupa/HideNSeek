@@ -256,7 +256,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1383285911580549654}
   m_Layer: 0
-  m_Name: HiderContainer
+  m_Name: HiderContainer_OLD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
