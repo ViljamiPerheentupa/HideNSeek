@@ -14,21 +14,16 @@ public class Generator : Singleton<Generator>
     [HideInInspector]
     public bool generated;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        Generate();
-    }
-    void Degenerate()
+    public void Degenerate()
     {
         this.generated = false;
         foreach (Transform child in transform)
         {
-            Destroy(child);
+            Destroy(child.gameObject);
         }
     }
     // Update is called once per frame
-    void Generate()
+    public void Generate()
     {
         if (this.generated)
             Degenerate();
@@ -149,3 +144,42 @@ public class Generator : Singleton<Generator>
         public int minDist = 0;
     }
 }
+
+#if UNITY_EDITOR
+namespace Editors
+{
+
+    using System;
+    using System.Linq;
+    using System.Collections.Generic;
+    using UnityEngine;
+    using UnityEditor;
+    using Object = UnityEngine.Object;
+    using static Muc.Editor.PropertyUtil;
+    using static Muc.Editor.EditorUtil;
+
+    [CanEditMultipleObjects]
+    [CustomEditor(typeof(Generator), true)]
+    public class GeneratorEditor : Editor
+    {
+
+        Generator t => (Generator)target;
+
+        public override void OnInspectorGUI()
+        {
+            DrawDefaultInspector();
+            using(DisabledScope(!Application.isPlaying))
+            {
+                if (ButtonField(new(nameof(t.Generate))))
+                {
+                    t.Generate();
+                }
+                if (ButtonField(new(nameof(t.Degenerate))))
+                {
+                t.Degenerate();
+                }
+            }
+        }
+    }
+}
+#endif
