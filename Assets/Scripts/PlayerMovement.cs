@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour {
     public string verticalJoystickname = "VerticalJoystick";
     public string horizontalJoystick2name = "HorizontalJoystick2";
     public string verticalJoystick2name = "VerticalJoystick2";
+    public string usepowerupname = "Fire1";
 
     private CharacterController cc;
     public float speed = 2.0f;
@@ -18,12 +19,16 @@ public class PlayerMovement : MonoBehaviour {
     Vector2 headRotation = Vector2.zero;
     public float headAngle = 0;
 
+    Dashing dash;
+
     void Start() {
         cc = GetComponent<CharacterController>();
         horizontalJoystickname = characterPrefix + horizontalJoystickname;
         verticalJoystickname = characterPrefix + verticalJoystickname;
         horizontalJoystick2name = characterPrefix + horizontalJoystick2name;
         verticalJoystick2name = characterPrefix + verticalJoystick2name;
+        usepowerupname = characterPrefix + usepowerupname;
+        dash = GetComponent<Dashing>();
     }
 
     void Update() {
@@ -40,6 +45,11 @@ public class PlayerMovement : MonoBehaviour {
         headAngle += Time.deltaTime * headRotationSpeed * -Input.GetAxis(verticalJoystick2name);
         headAngle = Mathf.Clamp(headAngle, -45, 45);
         head.localRotation = Quaternion.AngleAxis(headAngle, Vector3.right);
+
+        //dashing
+        if (gameObject.tag == "TheChump" && Input.GetButtonDown(usepowerupname)) {
+            dash.Dash();
+        }
     }
 
 }
