@@ -46,9 +46,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 257bd0baf63fcd24f843cdd381571bbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  powerPerTick: 5
-  timePerTick: 5
-  hiderInRadius: 0
 --- !u!135 &562018399709395838
 SphereCollider:
   m_ObjectHideFlags: 0

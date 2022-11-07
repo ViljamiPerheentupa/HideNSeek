@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 501706350822293808}
   m_Layer: 12
   m_Name: CatcherCollider
-  m_TagString: Untagged
+  m_TagString: Hider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -73,7 +73,8 @@ GameObject:
   - component: {fileID: 6468140305652521592}
   - component: {fileID: 9168403451777211076}
   - component: {fileID: 384090852389250518}
-  m_Layer: 5
+  - component: {fileID: 1139417566951061846}
+  m_Layer: 9
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -138,6 +139,25 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1139417566951061846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2431607618346444391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6924de200853e544bde37e390f2eeaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: e2beb876de3fa1444b364d4c78ebe11c, type: 3}
+  - {fileID: 21300000, guid: 60b0a152eb632be4a81624bd6250c443, type: 3}
+  - {fileID: 21300000, guid: 6723d2153a22eb74db9c5e1aaa75bc3d, type: 3}
+  - {fileID: 21300000, guid: c12d2649aa4617d4e9512838d5a727f2, type: 3}
+  image: {fileID: 384090852389250518}
+  timePerFrame: 0.3
 --- !u!1 &2905852865074731024
 GameObject:
   m_ObjectHideFlags: 0
@@ -149,7 +169,7 @@ GameObject:
   - component: {fileID: 6901819951323805685}
   - component: {fileID: 2312978025653269263}
   - component: {fileID: 2556062920646268652}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: ModelSIDE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -258,8 +278,8 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 2
-  m_Radius: 0.5
+  m_Height: 0.3
+  m_Radius: 0.3
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
@@ -295,7 +315,7 @@ MonoBehaviour:
     <used>k__BackingField: 0
     _paused: 0
     pauseTime: 0
-  siphonAmount: 5
+  siphonAmount: 10
   promptUI: {fileID: 0}
   promptFill: {fileID: 0}
   inRadius: 0
@@ -311,7 +331,8 @@ GameObject:
   - component: {fileID: 6755117941005495646}
   - component: {fileID: 3678003284378613722}
   - component: {fileID: 655930505024852407}
-  m_Layer: 0
+  - component: {fileID: 2748650204547233013}
+  m_Layer: 10
   m_Name: ModelTOP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -325,14 +346,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8514702438843053161}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 0.1, y: 1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6859893852837023682}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!33 &6755117941005495646
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -397,3 +418,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2748650204547233013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8514702438843053161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e88ed7859397d44e933003c98ef4e50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  materials:
+  - {fileID: 2100000, guid: d8dda8cbc0036404c9983afb84c4fa4f, type: 2}
+  - {fileID: 2100000, guid: 646a2a79e93560d4e8dd47b81ea146f9, type: 2}
+  - {fileID: 2100000, guid: f2540ac2f682d9c48b5aa86ca09f689a, type: 2}
+  - {fileID: 2100000, guid: 21d18fb5526f41e4eac2ccfbc1d266ca, type: 2}
+  mesh: {fileID: 3678003284378613722}
+  timePerFrame: 0.3

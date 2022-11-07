@@ -42,7 +42,7 @@ public class HiderCameraController : MonoBehaviour
         var hiderPos = hider.position;
         var hiderSpeed = Vector3.Distance(prevPos, hiderPos);
         var pos = transform.position;
-        var camTargetPos = hiderPos + hider.forward * hiderSpeed * 1000f + Vector3.up * camFollowHeight;
+        var camTargetPos = hiderPos + hider.forward * hiderSpeed * 100f + Vector3.up * camFollowHeight;
         var dist = Vector3.Distance(pos, camTargetPos);
         var delta = Time.deltaTime * camFollowSpeed * dist;
 

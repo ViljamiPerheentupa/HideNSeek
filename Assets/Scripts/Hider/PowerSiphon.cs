@@ -28,7 +28,7 @@ public class PowerSiphon : Singleton<PowerSiphon>
     // Update is called once per frame
     void Update()
     {
-        if (GameManager.instance.gameOn)
+        if (!GameManager.instance.gameOn)
         {
             return;
         }

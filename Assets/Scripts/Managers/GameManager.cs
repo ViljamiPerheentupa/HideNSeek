@@ -2,6 +2,7 @@ using Muc.Components.Extended;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -43,9 +44,14 @@ public class GameManager : Singleton<GameManager>
         Time.timeScale = 1;
         powerM.ResetPowerAmount();
         LeechWinUI.SetActive(false);
-        ChumpWinUI.SetActive(true);
+        ChumpWinUI.SetActive(false);
         powerUI.SetActive(true);
         gameOn = true;
+    }
+
+    public void ResetGame() {
+        SceneManager.UnloadSceneAsync(0);
+        SceneManager.LoadSceneAsync(0);
     }
 
     public void QuitGame()
